@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заявки</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <form id="ajax_form" method="POST" action="amo.php">
+        <input type="text" name="name" placeholder="Имя">
+        <input type="email" name="email" placeholder="Email">
+        <input type="tel" name="phone" placeholder="Телефон">
+        <input type="text" name="price" placeholder="Цена">
+        <input type="hidden" name="30sec" value="0">
+        <input type="submit" value="Отправить" id="btn">
+    </form>
+
+    <script>
+        let startTime = Date.now();
+        const form = document.getElementById('ajax_form')
+        form.addEventListener('submit', sendForm)
+
+        function sendForm(event){
+            event.preventDefault();
+            const timeSpent = (Date.now() - startTime) / 1000;
+            const spentMoreThan30Seconds = timeSpent > 30;
+
+            if (spentMoreThan30Seconds){
+                document.getElementsByName('30sec').value = 1
+                }
+            document.querySelector('form').submit();
+        }
+    </script>
+</body>
+</html>
