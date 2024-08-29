@@ -54,8 +54,8 @@
 
     <script>
         let startTime = Date.now();
-        const form = document.getElementById('ajax_form')
-        form.addEventListener('submit', sendForm)
+        document.getElementById('ajax_form').addEventListener('submit', sendForm)
+        const timeSpent = (Date.now() - startTime) / 1000;
 
         function sendForm(event){
             event.preventDefault();
@@ -63,7 +63,7 @@
             const spentMoreThan30Seconds = timeSpent > 30;
 
             if (spentMoreThan30Seconds){
-                document.getElementsByName('30sec').value = 1
+                document.getElementsByName('30sec')[0].value = 1;
                 }
             document.querySelector('form').submit();
         }

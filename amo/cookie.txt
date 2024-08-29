@@ -1,0 +1,26 @@
+Contact Payload: {
+    "name": "Imya",
+    "custom_fields_values": [
+        {
+            "field_code": "EMAIL",
+            "values": [
+                {
+                    "value": "Email@mail.com"
+                }
+            ]
+        },
+        {
+            "field_code": "PHONE",
+            "values": [
+                {
+                    "value": "89712312322"
+                }
+            ]
+        }
+    ]
+}
+Error: Client error: `POST https://prosto2004.amocrm.ru/api/v4/contacts` resulted in a `400 Bad Request` response:
+{"validation-errors":[{"request_id":"0","errors":[{"code":"InvalidType","path":"name","detail":"This value should be of  (truncated...)
+
+Response: {"validation-errors":[{"request_id":"0","errors":[{"code":"InvalidType","path":"name","detail":"This value should be of type array."}]}],"title":"Bad Request","type":"https://httpstatus.es/400","status":400,"detail":"Request validation failed"}
+{"success":false,"message":"\u041e\u0448\u0438\u0431\u043a\u0430"}
