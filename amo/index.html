@@ -16,26 +16,25 @@
             background-color: #f0f0f0;
         }
         .container {
+            text-align: center;
+            width: 500px;
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         input {
-            width: 100%;
+            width: 450px;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        button {
-            width: 100%;
-            padding: 10px;
+        #btn {
+            width: 472px;
             background-color: #28a745;
             color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
         }
         button:hover {
             background-color: #218838;
@@ -43,14 +42,16 @@
     </style>
 </head>
 <body>
-    <form id="ajax_form" method="POST" action="amo.php">
-        <input type="text" name="name" placeholder="Имя">
-        <input type="email" name="email" placeholder="Email">
-        <input type="tel" name="phone" placeholder="Телефон">
-        <input type="text" name="price" placeholder="Цена">
-        <input type="hidden" name="30sec" value="0">
-        <input type="submit" value="Отправить" id="btn">
-    </form>
+    <div class="container">
+        <form id="ajax_form" method="POST" action="amo.php">
+            <input type="text" name="name" placeholder="Имя">
+            <input type="email" name="email" placeholder="Email">
+            <input type="tel" name="phone" placeholder="Телефон">
+            <input type="text" name="price" placeholder="Цена">
+            <input type="hidden" name="30sec" value="0">
+            <input type="submit" value="Отправить" id="btn">
+        </form>
+    </div>
 
     <script>
         let startTime = Date.now();
